@@ -36,15 +36,15 @@ type MediaType = {
 };
 
 const ALL_MEDIA: MediaType[] = [
-  { id: 1, type: 'image', src: '/videos/wedding photos-20260626T070535Z-3-001/wedding photos/IMG_0035.JPG', category: 'Wedding', title: 'The Vows' },
-  { id: 2, type: 'image', src: '/videos/wedding photos-20260626T070535Z-3-001/wedding photos/IMG_0036.JPG', category: 'Wedding', title: 'Golden Hour' },
-  { id: 3, type: 'image', src: '/videos/wedding photos-20260626T070535Z-3-001/wedding photos/IMG_0037.JPG', category: 'Wedding', title: 'First Dance' },
-  { id: 4, type: 'image', src: '/videos/wedding photos-20260626T070535Z-3-001/wedding photos/IMG_0038.JPG', category: 'Wedding', title: 'Celebration' },
-  { id: 5, type: 'image', src: '/videos/wedding photos-20260626T070535Z-3-001/wedding photos/IMG_0039.JPG', category: 'Wedding', title: 'Portrait' },
-  { id: 6, type: 'image', src: '/videos/wedding photos-20260626T070535Z-3-001/wedding photos/IMG_0040.JPG', category: 'Wedding', title: 'Smile' },
-  { id: 7, type: 'image', src: '/videos/wedding photos-20260626T070535Z-3-001/wedding photos/IMG_0041.JPG', category: 'Wedding', title: 'Joy' },
-  { id: 8, type: 'image', src: '/videos/wedding photos-20260626T070535Z-3-001/wedding photos/IMG_0042.JPG', category: 'Wedding', title: 'Together' },
-  { id: 9, type: 'video', src: '/videos/corporate-20260626T072032Z-3-001/corporate/mcain.mp4', category: 'Corporate', title: 'Annual Gala' },
+  { id: 1, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/v1782473354/portfolio/xa6xpdqiriffljscgtp8.jpg', category: 'Wedding', title: 'The Vows' },
+  { id: 2, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/v1782473355/portfolio/or5yoqjf2a9zladkolfc.jpg', category: 'Wedding', title: 'Golden Hour' },
+  { id: 3, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/v1782473356/portfolio/bp0jfdvmzf1wekto8zvr.jpg', category: 'Wedding', title: 'First Dance' },
+  { id: 4, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/v1782473357/portfolio/aupo9g2hhxgddg8jdtjr.jpg', category: 'Wedding', title: 'Celebration' },
+  { id: 5, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/v1782473358/portfolio/gxkolqonsjbt0ewireyp.jpg', category: 'Wedding', title: 'Portrait' },
+  { id: 6, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/v1782473359/portfolio/lxa4gj53emgdpm7s2n0o.jpg', category: 'Wedding', title: 'Smile' },
+  { id: 7, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/v1782473360/portfolio/bpoh88n4osnuf7dhmsjs.jpg', category: 'Wedding', title: 'Joy' },
+  { id: 8, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/v1782473361/portfolio/yjyuqipst9q8lg90qtiu.jpg', category: 'Wedding', title: 'Together' },
+  { id: 9, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/v1782473388/portfolio/v4ntqvyhdzvvabcivq8y.mp4', category: 'Corporate', title: 'Annual Gala' },
   { id: 10, type: 'video', src: '/videos/corporate-20260626T072032Z-3-001/corporate/0523.mov', category: 'Corporate', title: 'Stage Ambience' },
   { id: 11, type: 'video', src: '/videos/reeels-20260626T071758Z-3-001/reeels/IMG_3216.mov', category: 'Reels', title: 'Instagram Reel' },
   { id: 12, type: 'video', src: '/videos/reeels-20260626T071758Z-3-001/reeels/0526 (1)(2).MOV', category: 'Reels', title: 'Behind the Scenes' },
@@ -56,9 +56,9 @@ const ALL_MEDIA: MediaType[] = [
 const CATEGORIES = ['All', 'Wedding', 'Teasers', 'Reels', 'Corporate'];
 
 const HERO_IMAGES = [
-  '/videos/wedding photos-20260626T070535Z-3-001/wedding photos/IMG_0035.JPG',
-  '/videos/wedding photos-20260626T070535Z-3-001/wedding photos/IMG_0036.JPG',
-  '/videos/wedding photos-20260626T070535Z-3-001/wedding photos/IMG_0039.JPG',
+  'https://res.cloudinary.com/dhfyfbxiv/image/upload/v1782473354/portfolio/xa6xpdqiriffljscgtp8.jpg',
+  'https://res.cloudinary.com/dhfyfbxiv/image/upload/v1782473355/portfolio/or5yoqjf2a9zladkolfc.jpg',
+  'https://res.cloudinary.com/dhfyfbxiv/image/upload/v1782473358/portfolio/gxkolqonsjbt0ewireyp.jpg',
 ];
 
 export default function Home() {
