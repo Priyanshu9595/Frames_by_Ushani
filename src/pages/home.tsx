@@ -45,12 +45,12 @@ const ALL_MEDIA: MediaType[] = [
   { id: 7, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/v1782473360/portfolio/bpoh88n4osnuf7dhmsjs.jpg', category: 'Wedding', title: 'Joy' },
   { id: 8, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/v1782473361/portfolio/yjyuqipst9q8lg90qtiu.jpg', category: 'Wedding', title: 'Together' },
   { id: 9, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/v1782473388/portfolio/v4ntqvyhdzvvabcivq8y.mp4', category: 'Corporate', title: 'Annual Gala' },
-  { id: 10, type: 'video', src: '/videos/corporate-20260626T072032Z-3-001/corporate/0523.mov', category: 'Corporate', title: 'Stage Ambience' },
-  { id: 11, type: 'video', src: '/videos/reeels-20260626T071758Z-3-001/reeels/IMG_3216.mov', category: 'Reels', title: 'Instagram Reel' },
-  { id: 12, type: 'video', src: '/videos/reeels-20260626T071758Z-3-001/reeels/0526 (1)(2).MOV', category: 'Reels', title: 'Behind the Scenes' },
-  { id: 13, type: 'video', src: '/videos/teasers-20260626T070538Z-3-001/teasers/promo.mp4', category: 'Teasers', title: 'Editorial Teaser' },
-  { id: 14, type: 'video', src: '/videos/teasers-20260626T070538Z-3-001/teasers/Short Teaser-.mp4', category: 'Teasers', title: 'Pre-wedding Teaser' },
-  { id: 15, type: 'video', src: '/videos/teasers-20260626T070538Z-3-001/teasers/wedding.mp4', category: 'Teasers', title: 'Wedding Teaser' },
+  { id: 10, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/v1782473400/portfolio/nyi48ucppaseimgr8yim.mp4', category: 'Corporate', title: 'Stage Ambience' },
+  { id: 11, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/v1782473405/portfolio/r5tsq9omwswhw9izo6yo.mp4', category: 'Reels', title: 'Instagram Reel' },
+  { id: 12, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/v1782473409/portfolio/rw5l1ut97dfgoqhuhgsq.mp4', category: 'Reels', title: 'Behind the Scenes' },
+  { id: 13, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/v1782473671/portfolio/avsmj7clxhuv8sitvpof.mp4', category: 'Teasers', title: 'Editorial Teaser' },
+  { id: 14, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/v1782473448/portfolio/sind1dnsgo7uxyhf8gse.mp4', category: 'Teasers', title: 'Pre-wedding Teaser' },
+  { id: 15, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/v1782473454/portfolio/of4ahmdkfkl2tkcgg3l9.mp4', category: 'Teasers', title: 'Wedding Teaser' },
 ];
 
 const CATEGORIES = ['All', 'Wedding', 'Teasers', 'Reels', 'Corporate'];
@@ -163,7 +163,7 @@ export default function Home() {
       <section id="home" className="relative h-screen w-full overflow-hidden bg-black">
         <div className="absolute inset-0">
           <video
-            src="/videos/teasers-20260626T070538Z-3-001/teasers/promo.mp4"
+            src="https://res.cloudinary.com/dhfyfbxiv/video/upload/v1782473671/portfolio/avsmj7clxhuv8sitvpof.mp4"
             autoPlay
             muted
             loop
