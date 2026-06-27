@@ -64,13 +64,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <div className="fixed inset-0 bg-waves pointer-events-none z-0"></div>
 
       <header className="sticky top-0 z-40 w-full border-b border-primary/20 bg-background/95 backdrop-blur-md">
-        <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-8">
-          <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="flex items-center gap-3 group">
-            <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-muted shrink-0">
-              <img src="/images/logo.jpeg" alt="Frames by Ushani Logo" className="h-full w-full object-cover scale-[1.8] group-hover:scale-[1.9] transition-transform duration-300" />
+        <div className="container mx-auto flex h-[50px] items-center justify-between px-4 md:px-8">
+          <a
+            href="#home"
+            onClick={(e) => handleNavClick(e, '#home')}
+            className="group flex min-w-0 items-center gap-2"
+            aria-label="Frames by Ushani home"
+          >
+            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#c89b2c] bg-white shadow-[0_3px_10px_rgba(200,155,44,0.12)] sm:h-8 sm:w-8">
+              <span className="font-serif text-[0.78rem] font-bold leading-none tracking-[-0.02em] text-[#c89b2c] sm:text-[0.9rem]">
+                FU
+              </span>
             </div>
-            <span className="font-serif text-xl sm:text-2xl font-bold tracking-wider text-primary">
-              Frames by Ushani
+            <span className="flex flex-col font-serif font-semibold leading-[0.82] tracking-wide text-[#c89b2c] transition-colors group-hover:text-[#b68922]">
+              <span className="text-xs sm:text-sm">Frames</span>
+              <span className="pl-3 text-[0.58rem] italic sm:pl-4 sm:text-[0.65rem]">by</span>
+              <span className="text-xs sm:text-sm">Ushani</span>
             </span>
           </a>
 
@@ -102,7 +111,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-card absolute left-0 top-20 w-full border-b border-primary/20 px-4 py-6 z-50 shadow-md">
+          <div className="md:hidden bg-card absolute left-0 top-[50px] w-full border-b border-primary/20 px-4 py-6 z-50 shadow-md">
             <nav className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <a
