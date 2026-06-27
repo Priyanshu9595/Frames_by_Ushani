@@ -43,7 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     const id = path.replace('#', '');
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80; // Header height
+      const offset = 50; // Header height
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
