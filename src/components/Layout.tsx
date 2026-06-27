@@ -68,18 +68,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
-            className="group flex min-w-0 items-center gap-2"
+            className="group flex min-w-0 items-center gap-3"
             aria-label="Frames by Ushani home"
           >
-            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#c89b2c] bg-white shadow-[0_3px_10px_rgba(200,155,44,0.12)] sm:h-8 sm:w-8">
-              <span className="font-serif text-[0.78rem] font-bold leading-none tracking-[-0.02em] text-[#c89b2c] sm:text-[0.9rem]">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#c89b2c] bg-white shadow-[0_4px_12px_rgba(200,155,44,0.14)]">
+              <span className="font-serif text-[1.1rem] font-bold leading-none tracking-[-0.02em] text-[#c89b2c]">
                 FU
               </span>
             </div>
-            <span className="flex flex-col font-serif font-semibold leading-[0.82] tracking-wide text-[#c89b2c] transition-colors group-hover:text-[#b68922]">
-              <span className="text-xs sm:text-sm">Frames</span>
-              <span className="pl-3 text-[0.58rem] italic sm:pl-4 sm:text-[0.65rem]">by</span>
-              <span className="text-xs sm:text-sm">Ushani</span>
+            <span className="truncate font-serif text-base font-semibold leading-none tracking-wide text-[#c89b2c] transition-colors group-hover:text-[#b68922] sm:text-lg">
+              Frames by Ushani
             </span>
           </a>
 
