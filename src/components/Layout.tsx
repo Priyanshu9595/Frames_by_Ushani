@@ -76,7 +76,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 FU
               </span>
             </div>
-            <span className="truncate font-serif text-base font-semibold leading-none tracking-wide text-[#c89b2c] transition-colors group-hover:text-[#b68922] sm:text-lg">
+            <span className="flex h-10 items-center truncate font-serif text-base font-semibold leading-none tracking-wide text-[#c89b2c] transition-colors group-hover:text-[#b68922] sm:text-lg">
               Frames by Ushani
             </span>
           </a>
