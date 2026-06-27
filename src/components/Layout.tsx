@@ -43,7 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     const id = path.replace('#', '');
     const element = document.getElementById(id);
     if (element) {
-      const offset = 50; // Header height
+      const offset = 56; // Header height
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -64,11 +64,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <div className="fixed inset-0 bg-waves pointer-events-none z-0"></div>
 
       <header className="sticky top-0 z-40 w-full border-b border-primary/20 bg-background/95 backdrop-blur-md">
-        <div className="container mx-auto flex h-[50px] items-center justify-between px-4 md:px-8">
+        <div className="container relative mx-auto flex h-[56px] items-center justify-between px-4 md:px-8">
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
-            className="group flex min-w-0 items-center gap-3"
+            className="relative z-10 flex shrink-0 items-center"
             aria-label="Frames by Ushani home"
           >
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#c89b2c] bg-white shadow-[0_4px_12px_rgba(200,155,44,0.14)]">
@@ -76,12 +76,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 FU
               </span>
             </div>
-            <span className="flex h-10 items-center truncate font-serif text-base font-semibold leading-none tracking-wide text-[#c89b2c] transition-colors group-hover:text-[#b68922] sm:text-lg">
-              Frames by Ushani
-            </span>
           </a>
 
-          <nav className="hidden md:flex space-x-8">
+          <a
+            href="#home"
+            onClick={(e) => handleNavClick(e, '#home')}
+            className="absolute left-1/2 top-1/2 z-0 max-w-[52vw] -translate-x-1/2 -translate-y-1/2 truncate text-center font-serif text-base font-semibold leading-none tracking-wide text-[#c89b2c] transition-colors hover:text-[#b68922] sm:text-xl md:max-w-[28vw]"
+            aria-label="Frames by Ushani home"
+          >
+            Frames by Ushani
+          </a>
+
+          <nav className="relative z-10 hidden md:flex space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.path}
@@ -96,7 +102,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             ))}
           </nav>
 
-          <div className="md:hidden">
+          <div className="relative z-10 md:hidden">
             <button
               onClick={toggleMenu}
               className="text-foreground focus:outline-none"
@@ -109,7 +115,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-card absolute left-0 top-[50px] w-full border-b border-primary/20 px-4 py-6 z-50 shadow-md">
+          <div className="md:hidden bg-card absolute left-0 top-[56px] w-full border-b border-primary/20 px-4 py-6 z-50 shadow-md">
             <nav className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <a
