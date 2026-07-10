@@ -50,7 +50,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     const id = path.replace('#', '');
     const element = document.getElementById(id);
     if (element) {
-      const offset = 130; // Increased offset so the navbar doesn't cover the title
+      const offset = 150; // Increased offset so the navbar doesn't cover the title and leaves a nice gap
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
