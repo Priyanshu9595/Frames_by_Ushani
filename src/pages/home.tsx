@@ -170,7 +170,7 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* 1. HERO SECTION */}
-      <section id="home" className="relative w-full h-[100dvh] overflow-hidden bg-black flex items-center justify-center">
+      <section id="home" className="relative w-full aspect-[4/3] md:aspect-video min-h-[60vh] md:max-h-[800px] xl:max-h-[900px] overflow-hidden bg-black flex items-center justify-center">
         <div className="absolute inset-0">
           <video
             src="https://res.cloudinary.com/dhfyfbxiv/video/upload/q_auto,f_auto/v1782473671/portfolio/avsmj7clxhuv8sitvpof.mp4"
