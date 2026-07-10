@@ -22,9 +22,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 const contactSchema = z.object({
   fullName: z.string().min(2, 'Name is required'),
   email: z.string().email('Invalid email address'),
-  phone: z.string().min(10, 'Valid phone number required'),
+  phone: z.string().regex(/^\d{10}$/, 'Valid 10-digit phone number required'),
   eventType: z.string().min(1, 'Please select an event type'),
-  eventDate: z.string().min(1, 'Event date is required'),
+  eventDate: z.string().min(1, 'Event date is required').refine((date) => {
+    const localToday = new Date();
+    localToday.setMinutes(localToday.getMinutes() - localToday.getTimezoneOffset());
+    const todayStr = localToday.toISOString().split('T')[0];
+    return date >= todayStr;
+  }, {
+    message: "Event date cannot be in the past"
+  }),
   message: z.string().min(10, 'Please provide some details about your event'),
 });
 
@@ -546,7 +553,12 @@ export default function Home() {
                         <FormItem>
                           <FormLabel className="text-foreground">Event Date</FormLabel>
                           <FormControl>
-                            <Input type="date" className="bg-card border-primary/20 focus:border-primary text-foreground shadow-sm" {...field} />
+                            <Input 
+                              type="date" 
+                              min={new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split('T')[0]}
+                              className="bg-card border-primary/20 focus:border-primary text-foreground shadow-sm" 
+                              {...field} 
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
