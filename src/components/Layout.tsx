@@ -67,36 +67,38 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen flex-col bg-background text-foreground transition-colors duration-500">
       <div className="fixed inset-0 bg-waves pointer-events-none z-0"></div>
 
-      <header className="fixed top-0 sm:top-4 md:top-6 left-1/2 z-50 w-full sm:w-[95%] max-w-5xl -translate-x-1/2 sm:rounded-full border-b sm:border border-primary/20 bg-background/70 backdrop-blur-xl shadow-lg transition-all duration-300">
-        <div className="flex h-16 items-center justify-between px-4 md:px-8">
-          <a
-            href="#home"
-            onClick={(e) => handleNavClick(e, '#home')}
-            className="flex items-center gap-3 group"
-            aria-label="Frames by Ushani home"
-          >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary bg-primary/10 shadow-[0_0_15px_rgba(200,155,44,0.15)] group-hover:bg-primary transition-colors duration-300">
-              <span className="font-serif text-[1.1rem] font-bold leading-none tracking-[-0.02em] text-primary group-hover:text-white transition-colors duration-300">
-                FU
+      <header className="fixed top-0 sm:top-4 md:top-6 left-1/2 z-50 w-full sm:w-[95%] max-w-[90rem] -translate-x-1/2 sm:rounded-full border-b sm:border border-primary/20 bg-background/70 backdrop-blur-xl shadow-lg transition-all duration-300">
+        <div className="flex h-16 md:h-20 items-center justify-between px-4 md:px-10">
+          <div className="flex-1 flex justify-start">
+            <a
+              href="#home"
+              onClick={(e) => handleNavClick(e, '#home')}
+              className="flex items-center gap-4 group"
+              aria-label="Frames by Ushani home"
+            >
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary bg-primary/10 shadow-[0_0_15px_rgba(200,155,44,0.15)] group-hover:bg-primary transition-colors duration-300">
+                <span className="font-serif text-[1.2rem] font-bold leading-none tracking-[-0.02em] text-primary group-hover:text-white transition-colors duration-300">
+                  FU
+                </span>
+              </div>
+              <span className="hidden md:block font-serif text-[1.3rem] font-semibold tracking-wide text-primary transition-colors group-hover:text-foreground whitespace-nowrap">
+                Frames by Ushani
               </span>
-            </div>
-            <span className="hidden md:block font-serif text-lg font-semibold tracking-wide text-primary transition-colors group-hover:text-foreground">
-              Frames by Ushani
-            </span>
-          </a>
+            </a>
+          </div>
 
           {/* Mobile Center Title */}
-          <span className="absolute left-1/2 -translate-x-1/2 md:hidden font-serif text-[15px] sm:text-lg font-semibold tracking-wide text-primary pointer-events-none">
+          <span className="absolute left-1/2 -translate-x-1/2 md:hidden font-serif text-[15px] sm:text-lg font-semibold tracking-wide text-primary pointer-events-none whitespace-nowrap">
             Frames by Ushani
           </span>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center justify-center space-x-10">
             {navLinks.map((link) => (
               <a
                 key={link.path}
                 href={link.path}
                 onClick={(e) => handleNavClick(e, link.path)}
-                className={`relative text-xs uppercase tracking-widest transition-colors hover:text-primary ${
+                className={`relative text-[13px] uppercase tracking-widest transition-colors hover:text-primary ${
                   activeSection === link.path.replace('#', '') ? 'text-primary font-semibold' : 'text-muted-foreground'
                 }`}
               >
@@ -108,19 +110,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex flex-1 items-center justify-end gap-6">
              {mounted && (
                <button
                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                  className="p-2 text-primary hover:text-foreground transition-colors rounded-full hover:bg-primary/10"
                  aria-label="Toggle theme"
                >
-                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                 {theme === 'dark' ? <Sun size={22} /> : <Moon size={22} />}
                </button>
              )}
              <button 
                onClick={(e) => handleNavClick(e, '#contact')}
-               className="rounded-full bg-gradient-to-r from-primary to-[#c9a84c] px-6 py-2.5 text-xs uppercase tracking-widest text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
+               className="rounded-full bg-gradient-to-r from-primary to-[#c9a84c] px-7 py-3 text-sm uppercase tracking-widest text-white shadow-md transition-all hover:scale-105 hover:shadow-lg whitespace-nowrap"
              >
                Book Now
              </button>
