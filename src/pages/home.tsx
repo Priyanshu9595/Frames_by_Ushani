@@ -380,9 +380,6 @@ export default function Home() {
                       loading="lazy"
                     />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-6 pointer-events-none">
-                    <span className="text-xs uppercase tracking-widest text-primary drop-shadow-sm mb-2">{item.category}</span>
-                  </div>
                 </motion.div>
               ))}
             </AnimatePresence>
