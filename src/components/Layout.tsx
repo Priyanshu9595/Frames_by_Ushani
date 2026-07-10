@@ -68,7 +68,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <div className="fixed inset-0 bg-waves pointer-events-none z-0"></div>
 
       <header className="fixed top-0 sm:top-4 md:top-6 left-1/2 z-50 w-full sm:w-[95%] max-w-[90rem] -translate-x-1/2 sm:rounded-full border-b sm:border border-primary/20 bg-background/70 backdrop-blur-xl shadow-lg transition-all duration-300">
-        <div className="flex h-16 md:h-20 items-center justify-between px-4 md:px-10">
+        <div className="flex h-16 items-center justify-between px-4 md:px-10">
           <div className="flex-1 flex justify-start">
             <a
               href="#home"
