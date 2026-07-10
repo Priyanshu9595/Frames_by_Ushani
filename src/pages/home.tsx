@@ -355,12 +355,20 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3 }}
-              className="columns-2 gap-3 sm:gap-6 lg:columns-3"
+              className={
+                filteredMedia.length < 3 
+                  ? "flex flex-wrap justify-center gap-6" 
+                  : "columns-2 gap-3 sm:gap-6 lg:columns-3"
+              }
             >
               {filteredMedia.map((item) => (
                 <div
                   key={item.id}
-                  className="group relative mb-3 sm:mb-6 overflow-hidden rounded-sm cursor-pointer break-inside-avoid shadow-sm border border-primary/5"
+                  className={`group relative mb-3 sm:mb-6 overflow-hidden rounded-sm cursor-pointer shadow-sm border border-primary/5 ${
+                    filteredMedia.length < 3 
+                      ? "w-full md:w-[48%] lg:w-[31%]" 
+                      : "break-inside-avoid inline-block w-full"
+                  }`}
                   onClick={() => setSelectedMediaId(item.id)}
                   onMouseEnter={(e) => {
                     const video = e.currentTarget.querySelector('video');
