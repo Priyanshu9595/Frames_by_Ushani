@@ -355,12 +355,7 @@ export default function Home() {
                       loop
                       playsInline
                       preload="metadata"
-                      onMouseEnter={(e) => {
-                        e.currentTarget.play().catch(() => {});
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.pause();
-                      }}
+                      autoPlay
                     />
                   ) : (
                     <img
