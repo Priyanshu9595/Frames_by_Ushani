@@ -78,6 +78,7 @@ export default function Home() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [filter, setFilter] = useState('All');
+  const [showMore, setShowMore] = useState(false);
   const [selectedMediaId, setSelectedMediaId] = useState<number | null>(null);
   const [heroIndex, setHeroIndex] = useState(0);
 
@@ -139,7 +140,7 @@ export default function Home() {
   };
 
   const filteredMedia = filter === 'All' 
-    ? ALL_MEDIA 
+    ? (showMore ? ALL_MEDIA : ALL_MEDIA.slice(0, 15))
     : ALL_MEDIA.filter(item => item.category === filter);
 
   const handleNext = (e: React.MouseEvent) => {
@@ -326,7 +327,10 @@ export default function Home() {
             {CATEGORIES.map(cat => (
               <button
                 key={cat}
-                onClick={() => setFilter(cat)}
+                onClick={() => {
+                  setFilter(cat);
+                  setShowMore(false);
+                }}
                 className={`rounded-sm px-6 py-2 text-sm uppercase tracking-widest transition-all shadow-sm ${
                   filter === cat
                     ? 'bg-primary text-white'
@@ -384,6 +388,17 @@ export default function Home() {
               ))}
             </AnimatePresence>
           </motion.div>
+
+          {filter === 'All' && !showMore && ALL_MEDIA.length > 15 && (
+            <div className="mt-12 flex justify-center w-full">
+              <button
+                onClick={() => setShowMore(true)}
+                className="rounded-sm border border-primary px-8 py-3 text-sm uppercase tracking-widest text-primary transition-all hover:bg-primary hover:text-white"
+              >
+                Show More
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
