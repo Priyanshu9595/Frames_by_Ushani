@@ -297,15 +297,21 @@ export default function Home() {
                 viewport={{ once: true }}
                 whileHover={{ y: -8 }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="group relative overflow-hidden bg-background p-8 text-center flex flex-col items-center justify-center shadow-lg rounded-2xl border border-primary/10 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl"
+                className="group relative overflow-hidden bg-background p-5 sm:p-8 flex flex-row sm:flex-col items-center sm:items-center sm:justify-center text-left sm:text-center shadow-md sm:shadow-lg rounded-2xl border border-primary/10 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl gap-5 sm:gap-0"
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="mb-6 p-5 rounded-full bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 relative z-10 border border-primary/10 group-hover:scale-110">
-                  <srv.icon size={36} strokeWidth={1.5} />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="shrink-0 sm:mb-6 p-4 sm:p-5 rounded-full bg-primary/10 sm:bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 relative z-10 border border-primary/20 sm:border-primary/10 group-hover:scale-110 shadow-sm sm:shadow-none">
+                  <srv.icon className="w-8 h-8 sm:w-9 sm:h-9" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-serif text-2xl text-foreground mb-3 relative z-10 group-hover:text-primary transition-colors duration-300">{srv.title}</h3>
-                <p className="text-sm text-muted-foreground relative z-10 leading-relaxed max-w-[200px]">{srv.desc}</p>
-                <div className="absolute bottom-0 left-0 h-1 w-0 bg-primary transition-all duration-500 group-hover:w-full" />
+                
+                <div className="flex flex-col relative z-10">
+                  <h3 className="font-serif text-xl sm:text-2xl text-foreground mb-1 sm:mb-3 group-hover:text-primary transition-colors duration-300">{srv.title}</h3>
+                  <p className="text-[13px] sm:text-sm text-muted-foreground leading-relaxed sm:max-w-[200px]">{srv.desc}</p>
+                </div>
+                
+                {/* Accent line: Left side on mobile, Bottom on desktop */}
+                <div className="absolute left-0 top-0 h-full w-1 sm:w-0 sm:h-1 sm:bottom-0 sm:top-auto bg-primary/80 sm:bg-primary transition-all duration-500 sm:group-hover:w-full" />
               </motion.div>
             ))}
           </div>
