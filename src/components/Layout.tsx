@@ -128,7 +128,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
              </button>
           </div>
 
-          <div className="md:hidden flex items-center gap-1">
+          <div className="lg:hidden flex items-center gap-1">
             {mounted && (
                <button
                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
