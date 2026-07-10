@@ -348,16 +348,17 @@ export default function Home() {
             ))}
           </div>
 
-          <motion.div 
-            className="columns-2 gap-3 sm:gap-6 lg:columns-3"
-          >
-            <AnimatePresence>
+          <AnimatePresence mode="wait">
+            <motion.div 
+              key={filter + (showMore ? 'more' : 'less')}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3 }}
+              className="columns-2 gap-3 sm:gap-6 lg:columns-3"
+            >
               {filteredMedia.map((item) => (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4 }}
+                <div
                   key={item.id}
                   className="group relative mb-3 sm:mb-6 overflow-hidden rounded-sm cursor-pointer break-inside-avoid shadow-sm border border-primary/5"
                   onClick={() => setSelectedMediaId(item.id)}
@@ -388,10 +389,10 @@ export default function Home() {
                       loading="lazy"
                     />
                   )}
-                </motion.div>
+                </div>
               ))}
-            </AnimatePresence>
-          </motion.div>
+            </motion.div>
+          </AnimatePresence>
 
           {filter === 'All' && ALL_MEDIA.length > 15 && (
             <div className="mt-12 flex justify-center w-full">
