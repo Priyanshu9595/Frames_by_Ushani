@@ -29,7 +29,7 @@ function App() {
     // Simulate loading for cinematic effect
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2200);
+    }, 1200);
     return () => clearTimeout(timer);
   }, []);
 

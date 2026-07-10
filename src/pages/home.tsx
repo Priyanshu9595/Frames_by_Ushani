@@ -354,7 +354,13 @@ export default function Home() {
                       muted
                       loop
                       playsInline
-                      autoPlay
+                      preload="metadata"
+                      onMouseEnter={(e) => {
+                        e.currentTarget.play().catch(() => {});
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.pause();
+                      }}
                     />
                   ) : (
                     <img
