@@ -349,7 +349,7 @@ export default function Home() {
           </div>
 
           <motion.div 
-            className="columns-1 gap-6 sm:columns-2 lg:columns-3"
+            className="columns-2 gap-3 sm:gap-6 lg:columns-3"
           >
             <AnimatePresence>
               {filteredMedia.map((item) => (
@@ -359,7 +359,7 @@ export default function Home() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4 }}
                   key={item.id}
-                  className="group relative mb-6 overflow-hidden rounded-sm cursor-pointer break-inside-avoid shadow-sm border border-primary/5"
+                  className="group relative mb-3 sm:mb-6 overflow-hidden rounded-sm cursor-pointer break-inside-avoid shadow-sm border border-primary/5"
                   onClick={() => setSelectedMediaId(item.id)}
                   onMouseEnter={(e) => {
                     const video = e.currentTarget.querySelector('video');
