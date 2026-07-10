@@ -187,8 +187,8 @@ export default function Home() {
             playsInline
             className="h-full w-full object-cover object-center scale-[1.35] md:scale-[1.05]"
           />
-          {/* Cinematic Gradient Filter Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-black/80 pointer-events-none mix-blend-multiply"></div>
+          {/* Very light overlay just to keep text slightly readable, but mostly bright video */}
+          <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
         </div>
         
         <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center">
