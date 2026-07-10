@@ -22,6 +22,22 @@
       "height": 404
     }
   ],
+  "Wedding": [
+    {
+      "name": "Copy of Copy of BIT09469.JPG",
+      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783681605/frames_by_ushani/Wedding/qvuzyhd7xrnjaaey8n8r.jpg",
+      "public_id": "frames_by_ushani/Wedding/qvuzyhd7xrnjaaey8n8r",
+      "width": 1920,
+      "height": 2880
+    },
+    {
+      "name": "Copy of Copy of BIT09505.JPG",
+      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783681615/frames_by_ushani/Wedding/ahev0avurufldcfabp6f.jpg",
+      "public_id": "frames_by_ushani/Wedding/ahev0avurufldcfabp6f",
+      "width": 1920,
+      "height": 1280
+    }
+  ],
   "corprate photos": [
     {
       "name": "1679761464652 2.jpg",
@@ -464,22 +480,6 @@
       "public_id": "frames_by_ushani/Corporate/aziiwehsorgi8bqrjnql",
       "width": 1920,
       "height": 2880
-    }
-  ],
-  "Wedding": [
-    {
-      "name": "Copy of Copy of BIT09469.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783681605/frames_by_ushani/Wedding/qvuzyhd7xrnjaaey8n8r.jpg",
-      "public_id": "frames_by_ushani/Wedding/qvuzyhd7xrnjaaey8n8r",
-      "width": 1920,
-      "height": 2880
-    },
-    {
-      "name": "Copy of Copy of BIT09505.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783681615/frames_by_ushani/Wedding/ahev0avurufldcfabp6f.jpg",
-      "public_id": "frames_by_ushani/Wedding/ahev0avurufldcfabp6f",
-      "width": 1920,
-      "height": 1280
     }
   ]
 }
