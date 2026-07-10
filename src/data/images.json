@@ -22,22 +22,6 @@
       "height": 404
     }
   ],
-  "Wedding": [
-    {
-      "name": "Copy of Copy of BIT09469.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783681605/frames_by_ushani/Wedding/qvuzyhd7xrnjaaey8n8r.jpg",
-      "public_id": "frames_by_ushani/Wedding/qvuzyhd7xrnjaaey8n8r",
-      "width": 1920,
-      "height": 2880
-    },
-    {
-      "name": "Copy of Copy of BIT09505.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783681615/frames_by_ushani/Wedding/ahev0avurufldcfabp6f.jpg",
-      "public_id": "frames_by_ushani/Wedding/ahev0avurufldcfabp6f",
-      "width": 1920,
-      "height": 1280
-    }
-  ],
   "corprate photos": [
     {
       "name": "1679761464652.jpg",
@@ -424,55 +408,6 @@
       "public_id": "frames_by_ushani/Corporate/uw3i65ylcvgd9a9vbbkv",
       "width": 1920,
       "height": 1280
-    },
-    {
-      "name": "Copy of VPG00018.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783681591/frames_by_ushani/Corporate/ceaebsxzld05din89lro.jpg",
-      "public_id": "frames_by_ushani/Corporate/ceaebsxzld05din89lro",
-      "width": 1920,
-      "height": 1280
-    },
-    {
-      "name": "Copy of VPG00116.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783681592/frames_by_ushani/Corporate/lxvhufvydjipuzdsifuk.jpg",
-      "public_id": "frames_by_ushani/Corporate/lxvhufvydjipuzdsifuk",
-      "width": 1920,
-      "height": 1280
-    },
-    {
-      "name": "Copy of VPG00154.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783681593/frames_by_ushani/Corporate/tdt7ynre0zdsatdugbi4.jpg",
-      "public_id": "frames_by_ushani/Corporate/tdt7ynre0zdsatdugbi4",
-      "width": 1920,
-      "height": 1280
-    },
-    {
-      "name": "Copy of VPG00155.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783681595/frames_by_ushani/Corporate/kkd5qpzry6cowubpu0bg.jpg",
-      "public_id": "frames_by_ushani/Corporate/kkd5qpzry6cowubpu0bg",
-      "width": 1920,
-      "height": 1280
-    },
-    {
-      "name": "Copy of VPG00182.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783681596/frames_by_ushani/Corporate/htj02inzhyp2ymyhnfmc.jpg",
-      "public_id": "frames_by_ushani/Corporate/htj02inzhyp2ymyhnfmc",
-      "width": 1920,
-      "height": 1280
-    },
-    {
-      "name": "RAK06911.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783681599/frames_by_ushani/Corporate/c4yv8whfbsuusuvloyda.jpg",
-      "public_id": "frames_by_ushani/Corporate/c4yv8whfbsuusuvloyda",
-      "width": 1920,
-      "height": 2880
-    },
-    {
-      "name": "RAK06974.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783681602/frames_by_ushani/Corporate/aziiwehsorgi8bqrjnql.jpg",
-      "public_id": "frames_by_ushani/Corporate/aziiwehsorgi8bqrjnql",
-      "width": 1920,
-      "height": 2880
     }
   ]
 }
