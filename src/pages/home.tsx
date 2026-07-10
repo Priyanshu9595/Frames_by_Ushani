@@ -170,7 +170,7 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* 1. HERO SECTION */}
-      <section id="home" className="relative w-full aspect-[16/9] md:aspect-[21/9] min-h-[60vh] md:max-h-[800px] xl:max-h-[900px] overflow-hidden bg-black flex items-center justify-center">
+      <section id="home" className="relative w-full h-[100dvh] md:h-auto md:aspect-[21/9] md:min-h-[60vh] md:max-h-[800px] xl:max-h-[900px] overflow-hidden bg-black flex items-center justify-center">
         <div className="absolute inset-0">
           <video
             src="https://res.cloudinary.com/dhfyfbxiv/video/upload/v1782473671/portfolio/avsmj7clxhuv8sitvpof.mp4"
@@ -188,8 +188,8 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <h2 className="mb-4 text-sm uppercase tracking-[0.3em] text-primary">Frames By Ushani</h2>
-            <h1 className="mb-6 font-serif text-5xl font-bold tracking-wide md:text-7xl lg:text-8xl text-white drop-shadow-lg">
+            <h2 className="mb-4 text-xs sm:text-sm uppercase tracking-[0.3em] text-primary">Frames By Ushani</h2>
+            <h1 className="mb-6 font-serif text-4xl sm:text-5xl font-bold tracking-wide md:text-7xl lg:text-8xl text-white drop-shadow-lg">
               Capturing emotions <br />
               <span className="text-gradient-gold italic drop-shadow-md">beyond frames.</span>
             </h1>
