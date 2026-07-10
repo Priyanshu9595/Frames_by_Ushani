@@ -185,8 +185,10 @@ export default function Home() {
             muted
             loop
             playsInline
-            className="h-full w-full object-cover object-center opacity-70 scale-[1.35] md:scale-[1.05]"
+            className="h-full w-full object-cover object-center scale-[1.35] md:scale-[1.05]"
           />
+          {/* Cinematic Gradient Filter Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-black/80 pointer-events-none mix-blend-multiply"></div>
         </div>
         
         <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center">
