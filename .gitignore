@@ -3,3 +3,7 @@ dist/
 public/videos/
 .env
 .DS_Store
+
+images/
+*.mp4
+*.mov

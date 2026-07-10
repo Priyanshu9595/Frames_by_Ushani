@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Check, MapPin, Phone, Mail, X, ChevronLeft } from 'lucide-react';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { ChevronRight, Check, MapPin, Phone, Mail, X, ChevronLeft, Camera, Briefcase, Film, Calendar } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useToast } from '@/hooks/use-toast';
+import imagesData from '../data/images.json';
 
 import {
   Form,
@@ -35,31 +36,36 @@ type MediaType = {
   title: string;
 };
 
-const ALL_MEDIA: MediaType[] = [
-  { id: 1, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/q_auto,f_auto/v1782473354/portfolio/xa6xpdqiriffljscgtp8.jpg', category: 'Wedding', title: 'The Vows' },
-  { id: 2, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/q_auto,f_auto/v1782473355/portfolio/or5yoqjf2a9zladkolfc.jpg', category: 'Wedding', title: 'Golden Hour' },
-  { id: 3, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/q_auto,f_auto/v1782473356/portfolio/bp0jfdvmzf1wekto8zvr.jpg', category: 'Wedding', title: 'First Dance' },
-  { id: 4, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/q_auto,f_auto/v1782473357/portfolio/aupo9g2hhxgddg8jdtjr.jpg', category: 'Wedding', title: 'Celebration' },
-  { id: 5, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/q_auto,f_auto/v1782473358/portfolio/gxkolqonsjbt0ewireyp.jpg', category: 'Wedding', title: 'Portrait' },
-  { id: 6, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/q_auto,f_auto/v1782473359/portfolio/lxa4gj53emgdpm7s2n0o.jpg', category: 'Wedding', title: 'Smile' },
-  { id: 7, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/q_auto,f_auto/v1782473360/portfolio/bpoh88n4osnuf7dhmsjs.jpg', category: 'Wedding', title: 'Joy' },
-  { id: 8, type: 'image', src: 'https://res.cloudinary.com/dhfyfbxiv/image/upload/q_auto,f_auto/v1782473361/portfolio/yjyuqipst9q8lg90qtiu.jpg', category: 'Wedding', title: 'Together' },
-  { id: 9, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/q_auto,f_auto/v1782473388/portfolio/v4ntqvyhdzvvabcivq8y.mp4', category: 'Corporate', title: 'Annual Gala' },
-  { id: 10, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/q_auto,f_auto/v1782473400/portfolio/nyi48ucppaseimgr8yim.mp4', category: 'Corporate', title: 'Stage Ambience' },
-  { id: 11, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/q_auto,f_auto/v1782473405/portfolio/r5tsq9omwswhw9izo6yo.mp4', category: 'Reels', title: 'Instagram Reel' },
-  { id: 12, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/q_auto,f_auto/v1782473409/portfolio/rw5l1ut97dfgoqhuhgsq.mp4', category: 'Reels', title: 'Behind the Scenes' },
-  { id: 13, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/q_auto,f_auto/v1782473671/portfolio/avsmj7clxhuv8sitvpof.mp4', category: 'Teasers', title: 'Editorial Teaser' },
-  { id: 14, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/q_auto,f_auto/v1782473448/portfolio/sind1dnsgo7uxyhf8gse.mp4', category: 'Teasers', title: 'Pre-wedding Teaser' },
-  { id: 15, type: 'video', src: 'https://res.cloudinary.com/dhfyfbxiv/video/upload/q_auto,f_auto/v1782473454/portfolio/of4ahmdkfkl2tkcgg3l9.mp4', category: 'Teasers', title: 'Wedding Teaser' },
-];
+const ALL_MEDIA: MediaType[] = [];
+let mediaIdCounter = 1;
+
+const mapCategory = (key: string) => {
+  const lowerKey = key.toLowerCase();
+  if (lowerKey.includes('teaser')) return 'Teasers';
+  if (lowerKey.includes('corprate') || lowerKey.includes('corporate') || lowerKey.includes('corparate')) return 'Corporate';
+  if (lowerKey.includes('reel')) return 'Reels';
+  if (lowerKey.includes('wedding')) return 'Wedding';
+  return 'All';
+};
+
+Object.entries(imagesData).forEach(([key, items]) => {
+  items.forEach((item: any) => {
+    ALL_MEDIA.push({
+      id: mediaIdCounter++,
+      type: item.url.match(/\.(mp4|mov|webm)$/i) ? 'video' : 'image',
+      src: item.url,
+      category: mapCategory(key),
+      title: item.name.split('.')[0] || 'Media'
+    });
+  });
+});
 
 const CATEGORIES = ['All', 'Wedding', 'Teasers', 'Reels', 'Corporate'];
 
-const HERO_IMAGES = [
-  'https://res.cloudinary.com/dhfyfbxiv/image/upload/q_auto,f_auto/v1782473354/portfolio/xa6xpdqiriffljscgtp8.jpg',
-  'https://res.cloudinary.com/dhfyfbxiv/image/upload/q_auto,f_auto/v1782473355/portfolio/or5yoqjf2a9zladkolfc.jpg',
-  'https://res.cloudinary.com/dhfyfbxiv/image/upload/q_auto,f_auto/v1782473358/portfolio/gxkolqonsjbt0ewireyp.jpg',
-];
+let HERO_IMAGES = ALL_MEDIA.filter(m => m.type === 'image' && m.category === 'Wedding').slice(0, 3).map(m => m.src);
+if (HERO_IMAGES.length === 0) {
+  HERO_IMAGES = ALL_MEDIA.filter(m => m.type === 'image').slice(0, 3).map(m => m.src);
+}
 
 export default function Home() {
   const { toast } = useToast();
@@ -67,6 +73,10 @@ export default function Home() {
   const [filter, setFilter] = useState('All');
   const [selectedMediaId, setSelectedMediaId] = useState<number | null>(null);
   const [heroIndex, setHeroIndex] = useState(0);
+
+  const { scrollY } = useScroll();
+  const heroY = useTransform(scrollY, [0, 1000], ['0%', '30%']);
+  const aboutImageY = useTransform(scrollY, [0, 1500], [50, -50]);
 
   useEffect(() => {
     document.title = "Frames by Ushani | Luxury Photography in Hyderabad";
@@ -161,7 +171,7 @@ export default function Home() {
     <div className="w-full">
       {/* 1. HERO SECTION */}
       <section id="home" className="relative h-screen w-full overflow-hidden bg-black">
-        <div className="absolute inset-0">
+        <motion.div style={{ y: heroY }} className="absolute -top-[20vh] left-0 right-0 h-[140vh]">
           <video
             src="https://res.cloudinary.com/dhfyfbxiv/video/upload/q_auto,f_auto/v1782473671/portfolio/avsmj7clxhuv8sitvpof.mp4"
             autoPlay
@@ -170,7 +180,7 @@ export default function Home() {
             playsInline
             className="absolute inset-0 h-full w-full object-cover object-center opacity-80"
           />
-        </div>
+        </motion.div>
         
         <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center">
           <motion.div
@@ -214,13 +224,13 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="relative max-w-md mx-auto lg:mx-0"
             >
-              <div className="aspect-[4/5] overflow-hidden rounded-sm relative z-10 shadow-lg border border-primary/10">
+              <motion.div style={{ y: aboutImageY }} className="aspect-[4/5] overflow-hidden rounded-sm relative z-10 shadow-lg border border-primary/10">
                 <img
                   src="/images/ushani-profile.jpeg"
                   alt="Ushani - Photographer & Filmmaker"
-                  className="h-full w-full object-cover transition-all duration-700"
+                  className="h-full w-full object-cover transition-all duration-700 hover:scale-105"
                 />
-              </div>
+              </motion.div>
               <div className="absolute -right-6 -bottom-6 -z-10 h-full w-full border border-primary/30" />
             </motion.div>
 
@@ -266,21 +276,27 @@ export default function Home() {
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto items-stretch">
             {[
-              { title: "Weddings", desc: "Photography & cinematic films." },
-              { title: "Corporate Events", desc: "Meetings, launches, office events." },
-              { title: "Reels & Content", desc: "Instagram reels for brands/businesses." },
-              { title: "Events", desc: "Birthdays, engagements, functions." }
+              { title: "Weddings", desc: "Photography & cinematic films.", icon: Camera },
+              { title: "Corporate Events", desc: "Meetings, launches, office events.", icon: Briefcase },
+              { title: "Reels & Content", desc: "Instagram reels for brands/businesses.", icon: Film },
+              { title: "Events", desc: "Birthdays, engagements, functions.", icon: Calendar }
             ].map((srv, i) => (
               <motion.div
                 key={srv.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -8 }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="glass-card p-8 text-center flex flex-col items-center justify-center shadow-md rounded-sm border border-primary/10 hover:border-primary/40 transition-colors"
+                className="group relative overflow-hidden bg-background p-8 text-center flex flex-col items-center justify-center shadow-lg rounded-2xl border border-primary/10 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl"
               >
-                <h3 className="font-serif text-2xl text-foreground mb-4">{srv.title}</h3>
-                <p className="text-sm text-muted-foreground">{srv.desc}</p>
+                <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="mb-6 p-5 rounded-full bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 relative z-10 border border-primary/10 group-hover:scale-110">
+                  <srv.icon size={36} strokeWidth={1.5} />
+                </div>
+                <h3 className="font-serif text-2xl text-foreground mb-3 relative z-10 group-hover:text-primary transition-colors duration-300">{srv.title}</h3>
+                <p className="text-sm text-muted-foreground relative z-10 leading-relaxed max-w-[200px]">{srv.desc}</p>
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-primary transition-all duration-500 group-hover:w-full" />
               </motion.div>
             ))}
           </div>
@@ -350,7 +366,6 @@ export default function Home() {
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-6">
                     <span className="text-xs uppercase tracking-widest text-primary drop-shadow-sm mb-2">{item.category}</span>
-                    <h3 className="font-serif text-xl text-foreground drop-shadow-sm">{item.title}</h3>
                   </div>
                 </motion.div>
               ))}

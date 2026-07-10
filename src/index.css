@@ -90,35 +90,35 @@
 }
 
 .dark {
-  --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
+  --background: 240 10% 4%;
+  --foreground: 0 0% 95%;
 
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
+  --border: 240 10% 15%;
+  --input: 240 10% 15%;
   --ring: 43 74% 49%;
 
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 0%;
-  --card-border: 0 0% 90%;
+  --card: 240 10% 6%;
+  --card-foreground: 0 0% 95%;
+  --card-border: 240 10% 15%;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
-  --popover-border: 0 0% 90%;
+  --popover: 240 10% 6%;
+  --popover-foreground: 0 0% 95%;
+  --popover-border: 240 10% 15%;
 
   --primary: 43 74% 49%;
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 0 0% 95%;
-  --secondary-foreground: 0 0% 0%;
+  --secondary: 240 10% 12%;
+  --secondary-foreground: 0 0% 95%;
 
-  --muted: 0 0% 95%;
-  --muted-foreground: 0 0% 40%;
+  --muted: 240 10% 12%;
+  --muted-foreground: 240 10% 65%;
 
-  --accent: 43 65% 90%;
-  --accent-foreground: 43 74% 30%;
+  --accent: 240 10% 15%;
+  --accent-foreground: 43 74% 60%;
 
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
 }
 
 @layer base {
@@ -140,6 +140,10 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.dark .glass-card {
+  background: rgba(10, 10, 10, 0.6);
 }
 
 .text-gradient-gold {

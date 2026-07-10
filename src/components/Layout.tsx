@@ -1,10 +1,17 @@
-import React, { useEffect } from 'react';
-import { FaWhatsapp, FaInstagram, FaFacebook, FaYoutube, FaPinterest } from 'react-icons/fa';
-import { Menu, X } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { FaWhatsapp, FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa';
+import { Menu, X, Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [activeSection, setActiveSection] = React.useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -43,7 +50,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     const id = path.replace('#', '');
     const element = document.getElementById(id);
     if (element) {
-      const offset = 56; // Header height
+      const offset = 100; // Header height + top margin for floating nav
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -57,81 +64,115 @@ export function Layout({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
-      {/* Decorative corners removed */}
-      
-      {/* Subtle abstract wave overlay */}
+    <div className="flex min-h-screen flex-col bg-background text-foreground transition-colors duration-500">
       <div className="fixed inset-0 bg-waves pointer-events-none z-0"></div>
 
-      <header className="sticky top-0 z-40 w-full border-b border-primary/20 bg-background/95 backdrop-blur-md">
-        <div className="container relative mx-auto flex h-[56px] items-center justify-between px-4 md:px-8">
+      <header className="fixed top-0 sm:top-4 md:top-6 left-1/2 z-50 w-full sm:w-[95%] max-w-5xl -translate-x-1/2 sm:rounded-full border-b sm:border border-primary/20 bg-background/70 backdrop-blur-xl shadow-lg transition-all duration-300">
+        <div className="flex h-16 items-center justify-between px-4 md:px-8">
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
-            className="relative z-10 flex shrink-0 items-center"
+            className="flex items-center gap-3 group"
             aria-label="Frames by Ushani home"
           >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#c89b2c] bg-white shadow-[0_4px_12px_rgba(200,155,44,0.14)]">
-              <span className="font-serif text-[1.1rem] font-bold leading-none tracking-[-0.02em] text-[#c89b2c]">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary bg-primary/10 shadow-[0_0_15px_rgba(200,155,44,0.15)] group-hover:bg-primary transition-colors duration-300">
+              <span className="font-serif text-[1.1rem] font-bold leading-none tracking-[-0.02em] text-primary group-hover:text-white transition-colors duration-300">
                 FU
               </span>
             </div>
+            <span className="hidden md:block font-serif text-lg font-semibold tracking-wide text-primary transition-colors group-hover:text-foreground">
+              Frames by Ushani
+            </span>
           </a>
 
-          <a
-            href="#home"
-            onClick={(e) => handleNavClick(e, '#home')}
-            className="absolute left-1/2 top-1/2 z-0 max-w-[52vw] -translate-x-1/2 -translate-y-1/2 truncate text-center font-serif text-base font-semibold leading-none tracking-wide text-[#c89b2c] transition-colors hover:text-[#b68922] sm:text-xl md:max-w-[28vw]"
-            aria-label="Frames by Ushani home"
-          >
+          {/* Mobile Center Title */}
+          <span className="absolute left-1/2 -translate-x-1/2 md:hidden font-serif text-[15px] sm:text-lg font-semibold tracking-wide text-primary pointer-events-none">
             Frames by Ushani
-          </a>
+          </span>
 
-          <nav className="relative z-10 hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.path}
                 href={link.path}
                 onClick={(e) => handleNavClick(e, link.path)}
-                className={`text-sm uppercase tracking-widest transition-colors hover:text-primary ${
-                  activeSection === link.path.replace('#', '') ? 'text-primary' : 'text-muted-foreground'
+                className={`relative text-xs uppercase tracking-widest transition-colors hover:text-primary ${
+                  activeSection === link.path.replace('#', '') ? 'text-primary font-semibold' : 'text-muted-foreground'
                 }`}
               >
                 {link.name}
+                {activeSection === link.path.replace('#', '') && (
+                  <span className="absolute -bottom-2 left-1/2 h-[2px] w-1/2 -translate-x-1/2 bg-primary rounded-full transition-all" />
+                )}
               </a>
             ))}
           </nav>
 
-          <div className="relative z-10 md:hidden">
+          <div className="hidden md:flex items-center gap-4">
+             {mounted && (
+               <button
+                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                 className="p-2 text-primary hover:text-foreground transition-colors rounded-full hover:bg-primary/10"
+                 aria-label="Toggle theme"
+               >
+                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+               </button>
+             )}
+             <button 
+               onClick={(e) => handleNavClick(e, '#contact')}
+               className="rounded-full bg-gradient-to-r from-primary to-[#c9a84c] px-6 py-2.5 text-xs uppercase tracking-widest text-white shadow-md transition-all hover:scale-105 hover:shadow-lg"
+             >
+               Book Now
+             </button>
+          </div>
+
+          <div className="md:hidden flex items-center gap-1">
+            {mounted && (
+               <button
+                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                 className="p-2 text-primary hover:text-foreground transition-colors rounded-full hover:bg-primary/10"
+                 aria-label="Toggle theme"
+               >
+                 {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
+               </button>
+            )}
             <button
               onClick={toggleMenu}
-              className="text-foreground focus:outline-none"
+              className="text-primary hover:text-foreground transition-colors focus:outline-none p-2"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
         </div>
 
         {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-card absolute left-0 top-[56px] w-full border-b border-primary/20 px-4 py-6 z-50 shadow-md">
-            <nav className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.path}
-                  href={link.path}
-                  onClick={(e) => handleNavClick(e, link.path)}
-                  className={`text-sm uppercase tracking-widest transition-colors ${
-                    activeSection === link.path.replace('#', '') ? 'text-primary' : 'text-muted-foreground'
-                  }`}
-                >
-                  {link.name}
-                </a>
-              ))}
-            </nav>
-          </div>
-        )}
+        <div 
+          className={`md:hidden absolute left-0 top-[110%] w-full rounded-2xl border border-primary/20 bg-background/95 backdrop-blur-xl shadow-2xl transition-all duration-300 origin-top overflow-hidden ${
+            isMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'
+          }`}
+        >
+          <nav className="flex flex-col p-6 space-y-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.path}
+                href={link.path}
+                onClick={(e) => handleNavClick(e, link.path)}
+                className={`text-sm uppercase tracking-widest transition-colors text-center ${
+                  activeSection === link.path.replace('#', '') ? 'text-primary font-semibold' : 'text-muted-foreground'
+                }`}
+              >
+                {link.name}
+              </a>
+            ))}
+            <button 
+               onClick={(e) => handleNavClick(e, '#contact')}
+               className="w-full rounded-full bg-gradient-to-r from-primary to-[#c9a84c] px-6 py-3.5 text-sm uppercase tracking-widest text-white shadow-md transition-all mt-2"
+             >
+               Book Now
+             </button>
+          </nav>
+        </div>
       </header>
 
       <main className="flex-1 w-full overflow-x-hidden">
@@ -146,7 +187,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               Capturing emotions beyond frames. A luxury photography studio capturing unhurried, cinematic, and deeply personal moments.
             </p>
           </div>
-          
+
           <div className="space-y-4 flex flex-col items-center sm:items-start">
             <h3 className="font-serif text-xl tracking-widest text-primary">Quick Links</h3>
             <nav className="flex flex-col space-y-3 items-center sm:items-start">
@@ -174,7 +215,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
         </div>
-        
+
         <div className="container mx-auto mt-12 px-4 text-center">
           <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-8"></div>
           <p className="text-xs text-muted-foreground tracking-widest uppercase">
@@ -183,7 +224,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </footer>
 
-      {/* WhatsApp FAB */}
       <a
         href="https://wa.me/916305718895"
         target="_blank"
@@ -196,3 +236,4 @@ export function Layout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
+
