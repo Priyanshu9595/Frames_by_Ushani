@@ -343,13 +343,11 @@ export default function Home() {
           </div>
 
           <motion.div 
-            layout
-            className="columns-1 gap-6 sm:columns-2 lg:columns-3 [&>div:not(:first-child)]:mt-6"
+            className="columns-1 gap-6 sm:columns-2 lg:columns-3"
           >
             <AnimatePresence>
               {filteredMedia.map((item) => (
                 <motion.div
-                  layout
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
