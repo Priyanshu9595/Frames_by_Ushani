@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-import { ChevronRight, Check, MapPin, Phone, Mail, X, ChevronLeft, Camera, Briefcase, Film, Calendar } from 'lucide-react';
+import { ChevronRight, Check, MapPin, Phone, Mail, X, ChevronLeft, Camera, Briefcase, Film, Calendar, ChevronUp, ChevronDown } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -389,13 +389,23 @@ export default function Home() {
             </AnimatePresence>
           </motion.div>
 
-          {filter === 'All' && !showMore && ALL_MEDIA.length > 15 && (
+          {filter === 'All' && ALL_MEDIA.length > 15 && (
             <div className="mt-12 flex justify-center w-full">
               <button
-                onClick={() => setShowMore(true)}
-                className="rounded-sm border border-primary px-8 py-3 text-sm uppercase tracking-widest text-primary transition-all hover:bg-primary hover:text-white"
+                onClick={() => setShowMore(!showMore)}
+                className="group flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-[#c9a84c] px-8 py-3 text-sm uppercase tracking-widest text-white shadow-md transition-all hover:scale-105 hover:shadow-lg focus:outline-none"
               >
-                Show More
+                {showMore ? (
+                  <>
+                    <span>Show Less</span>
+                    <ChevronUp className="transition-transform group-hover:-translate-y-1" size={18} />
+                  </>
+                ) : (
+                  <>
+                    <span>Show More</span>
+                    <ChevronDown className="transition-transform group-hover:translate-y-1" size={18} />
+                  </>
+                )}
               </button>
             </div>
           )}
