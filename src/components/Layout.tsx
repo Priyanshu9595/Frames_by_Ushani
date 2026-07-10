@@ -50,7 +50,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     const id = path.replace('#', '');
     const element = document.getElementById(id);
     if (element) {
-      const offset = 100; // Header height + top margin for floating nav
+      const offset = 130; // Increased offset so the navbar doesn't cover the title
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
