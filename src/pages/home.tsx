@@ -178,7 +178,7 @@ export default function Home() {
             muted
             loop
             playsInline
-            className="h-full w-full object-cover object-center opacity-70 scale-[1.05]"
+            className="h-full w-full object-cover object-top md:object-center opacity-70 scale-[1.35] origin-top md:scale-[1.05] md:origin-center"
           />
         </div>
         
