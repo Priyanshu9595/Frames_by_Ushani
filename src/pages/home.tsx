@@ -170,17 +170,17 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* 1. HERO SECTION */}
-      <section id="home" className="relative h-screen w-full overflow-hidden bg-black">
-        <motion.div style={{ y: heroY }} className="absolute -top-[20vh] left-0 right-0 h-[140vh]">
+      <section id="home" className="relative w-full h-[100dvh] md:h-auto md:aspect-video overflow-hidden bg-black flex items-center justify-center">
+        <div className="absolute inset-0">
           <video
             src="https://res.cloudinary.com/dhfyfbxiv/video/upload/q_auto,f_auto/v1782473671/portfolio/avsmj7clxhuv8sitvpof.mp4"
             autoPlay
             muted
             loop
             playsInline
-            className="absolute inset-0 h-full w-full object-cover object-center opacity-80"
+            className="h-full w-full object-cover object-center opacity-70"
           />
-        </motion.div>
+        </div>
         
         <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center">
           <motion.div
