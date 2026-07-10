@@ -98,9 +98,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 key={link.path}
                 href={link.path}
                 onClick={(e) => handleNavClick(e, link.path)}
-                className={`relative text-[13px] uppercase tracking-widest transition-colors hover:text-primary ${
-                  activeSection === link.path.replace('#', '') ? 'text-primary font-semibold' : 'text-muted-foreground'
-                }`}
+                className={`relative text-[13px] uppercase tracking-widest transition-colors hover:text-primary ${activeSection === link.path.replace('#', '') ? 'text-primary font-semibold' : 'text-muted-foreground'
+                  }`}
               >
                 {link.name}
                 {activeSection === link.path.replace('#', '') && (
@@ -111,32 +110,32 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </nav>
 
           <div className="hidden lg:flex flex-1 items-center justify-end gap-6">
-             {mounted && (
-               <button
-                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                 className="p-2 text-primary hover:text-foreground transition-colors rounded-full hover:bg-primary/10"
-                 aria-label="Toggle theme"
-               >
-                 {theme === 'dark' ? <Sun size={22} /> : <Moon size={22} />}
-               </button>
-             )}
-             <button 
-               onClick={(e) => handleNavClick(e, '#contact')}
-               className="rounded-full bg-gradient-to-r from-primary to-[#c9a84c] px-7 py-3 text-sm uppercase tracking-widest text-white shadow-md transition-all hover:scale-105 hover:shadow-lg whitespace-nowrap"
-             >
-               Book Now
-             </button>
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="p-2 text-primary hover:text-foreground transition-colors rounded-full hover:bg-primary/10"
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? <Sun size={22} /> : <Moon size={22} />}
+              </button>
+            )}
+            <button
+              onClick={(e) => handleNavClick(e, '#contact')}
+              className="rounded-full bg-gradient-to-r from-primary to-[#c9a84c] px-7 py-3 text-sm uppercase tracking-widest text-white shadow-md transition-all hover:scale-105 hover:shadow-lg whitespace-nowrap"
+            >
+              Book Now
+            </button>
           </div>
 
           <div className="lg:hidden flex items-center gap-1">
             {mounted && (
-               <button
-                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                 className="p-2 text-primary hover:text-foreground transition-colors rounded-full hover:bg-primary/10"
-                 aria-label="Toggle theme"
-               >
-                 {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
-               </button>
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="p-2 text-primary hover:text-foreground transition-colors rounded-full hover:bg-primary/10"
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
+              </button>
             )}
             <button
               onClick={toggleMenu}
@@ -149,10 +148,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         {/* Mobile menu */}
-        <div 
-          className={`md:hidden absolute left-0 top-[110%] w-full rounded-2xl border border-primary/20 bg-background/95 backdrop-blur-xl shadow-2xl transition-all duration-300 origin-top overflow-hidden ${
-            isMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'
-          }`}
+        <div
+          className={`md:hidden absolute left-0 top-[110%] w-full rounded-2xl border border-primary/20 bg-background/95 backdrop-blur-xl shadow-2xl transition-all duration-300 origin-top overflow-hidden ${isMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'
+            }`}
         >
           <nav className="flex flex-col p-6 space-y-6">
             {navLinks.map((link) => (
@@ -160,19 +158,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 key={link.path}
                 href={link.path}
                 onClick={(e) => handleNavClick(e, link.path)}
-                className={`text-sm uppercase tracking-widest transition-colors text-center ${
-                  activeSection === link.path.replace('#', '') ? 'text-primary font-semibold' : 'text-muted-foreground'
-                }`}
+                className={`text-sm uppercase tracking-widest transition-colors text-center ${activeSection === link.path.replace('#', '') ? 'text-primary font-semibold' : 'text-muted-foreground'
+                  }`}
               >
                 {link.name}
               </a>
             ))}
-            <button 
-               onClick={(e) => handleNavClick(e, '#contact')}
-               className="w-full rounded-full bg-gradient-to-r from-primary to-[#c9a84c] px-6 py-3.5 text-sm uppercase tracking-widest text-white shadow-md transition-all mt-2"
-             >
-               Book Now
-             </button>
+            <button
+              onClick={(e) => handleNavClick(e, '#contact')}
+              className="w-full rounded-full bg-gradient-to-r from-primary to-[#c9a84c] px-6 py-3.5 text-sm uppercase tracking-widest text-white shadow-md transition-all mt-2"
+            >
+              Book Now
+            </button>
           </nav>
         </div>
       </header>

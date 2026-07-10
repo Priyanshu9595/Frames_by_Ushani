@@ -196,10 +196,10 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <h1 className="mb-2 text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-primary drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <h1 className="mb-2 text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-primary drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
               Frames By Ushani
             </h1>
-            <h2 className="mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] font-light leading-tight" style={{ fontFamily: "'Great Vibes', cursive" }}>
+            <h2 className="mb-8 text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] font-light leading-tight" style={{ fontFamily: "'Great Vibes', cursive" }}>
               Capturing Emotions Beyond <br className="sm:hidden" /> Frames
             </h2>
             
