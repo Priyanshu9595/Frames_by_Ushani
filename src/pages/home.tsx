@@ -67,6 +67,9 @@ Object.entries(imagesData).forEach(([key, items]) => {
   });
 });
 
+// Create a mixed array for the 'All' tab so it doesn't just show one category at a time sequentially
+const MIXED_ALL_MEDIA = [...ALL_MEDIA].sort(() => Math.random() - 0.5);
+
 const CATEGORIES = ['All', 'Wedding', 'Teasers', 'Reels', 'Corporate'];
 
 let HERO_IMAGES = ALL_MEDIA.filter(m => m.type === 'image' && m.category === 'Wedding').slice(0, 3).map(m => m.src);
@@ -140,7 +143,7 @@ export default function Home() {
   };
 
   const filteredMedia = filter === 'All' 
-    ? (showMore ? ALL_MEDIA : ALL_MEDIA.slice(0, 15))
+    ? (showMore ? MIXED_ALL_MEDIA : MIXED_ALL_MEDIA.slice(0, 15))
     : ALL_MEDIA.filter(item => item.category === filter);
 
   const handleNext = (e: React.MouseEvent) => {
