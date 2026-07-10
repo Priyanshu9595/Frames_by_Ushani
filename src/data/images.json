@@ -166,6 +166,13 @@
       "height": 4096
     },
     {
+      "name": "02.JPG",
+      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783660426/frames_by_ushani/wedding/qvlwz5fs691nta1ppkiw.jpg",
+      "public_id": "frames_by_ushani/wedding/qvlwz5fs691nta1ppkiw",
+      "width": 3000,
+      "height": 2000
+    },
+    {
       "name": "03.jpg",
       "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783660429/frames_by_ushani/wedding/usg3c9hy08cutjge1dgp.jpg",
       "public_id": "frames_by_ushani/wedding/usg3c9hy08cutjge1dgp",
@@ -178,6 +185,13 @@
       "public_id": "frames_by_ushani/wedding/ov6dmweczq6gkwizjmla",
       "width": 3000,
       "height": 2067
+    },
+    {
+      "name": "05(1).JPG",
+      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783691661/frames_by_ushani/Wedding/tyzjz17jnnsdtqic0bcw.jpg",
+      "public_id": "frames_by_ushani/Wedding/tyzjz17jnnsdtqic0bcw",
+      "width": 4000,
+      "height": 2667
     },
     {
       "name": "05.JPG",
@@ -208,20 +222,6 @@
       "height": 2000
     },
     {
-      "name": "Copy of VPG00097.jpg",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783660444/frames_by_ushani/wedding/go6djtuv2udjyxcraza3.jpg",
-      "public_id": "frames_by_ushani/wedding/go6djtuv2udjyxcraza3",
-      "width": 3000,
-      "height": 4500
-    },
-    {
-      "name": "02.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783660426/frames_by_ushani/wedding/qvlwz5fs691nta1ppkiw.jpg",
-      "public_id": "frames_by_ushani/wedding/qvlwz5fs691nta1ppkiw",
-      "width": 3000,
-      "height": 2000
-    },
-    {
       "name": "Copy of SC_00230.JPG",
       "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783660442/frames_by_ushani/wedding/npiznloqdcxxevoazivf.jpg",
       "public_id": "frames_by_ushani/wedding/npiznloqdcxxevoazivf",
@@ -229,46 +229,11 @@
       "height": 2001
     },
     {
-      "name": "05(1).JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783691661/frames_by_ushani/Wedding/tyzjz17jnnsdtqic0bcw.jpg",
-      "public_id": "frames_by_ushani/Wedding/tyzjz17jnnsdtqic0bcw",
-      "width": 4000,
-      "height": 2667
-    },
-    {
-      "name": "Copy of RAK06654.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783693647/frames_by_ushani/Wedding/hijcfpeaq5tfln1ez7qv.jpg",
-      "public_id": "frames_by_ushani/Wedding/hijcfpeaq5tfln1ez7qv",
-      "width": 1920,
-      "height": 1280
-    },
-    {
-      "name": "Copy of RAK06662.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783693649/frames_by_ushani/Wedding/cfp5nmnea7dhroaeq5ao.jpg",
-      "public_id": "frames_by_ushani/Wedding/cfp5nmnea7dhroaeq5ao",
-      "width": 1920,
-      "height": 1280
-    },
-    {
-      "name": "Copy of RAK06726.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783693651/frames_by_ushani/Wedding/fbaqdpnddgqdp3ko4mfk.jpg",
-      "public_id": "frames_by_ushani/Wedding/fbaqdpnddgqdp3ko4mfk",
-      "width": 1920,
-      "height": 1280
-    },
-    {
-      "name": "Copy of RAK06734.JPG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783693653/frames_by_ushani/Wedding/soxbfykrcxrcreeq2uaf.jpg",
-      "public_id": "frames_by_ushani/Wedding/soxbfykrcxrcreeq2uaf",
-      "width": 1920,
-      "height": 1280
-    },
-    {
-      "name": "IMG_2728.JPEG",
-      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783693655/frames_by_ushani/Wedding/dyo1tsgz3oeoa3ohf5vo.jpg",
-      "public_id": "frames_by_ushani/Wedding/dyo1tsgz3oeoa3ohf5vo",
-      "width": 1920,
-      "height": 2881
+      "name": "Copy of VPG00097.jpg",
+      "url": "https://res.cloudinary.com/dhfyfbxiv/image/upload/v1783660444/frames_by_ushani/wedding/go6djtuv2udjyxcraza3.jpg",
+      "public_id": "frames_by_ushani/wedding/go6djtuv2udjyxcraza3",
+      "width": 3000,
+      "height": 4500
     }
   ],
   "Events": [
