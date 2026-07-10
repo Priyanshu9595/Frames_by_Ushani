@@ -354,6 +354,14 @@ export default function Home() {
                   key={item.id}
                   className="group relative mb-6 overflow-hidden rounded-sm cursor-pointer break-inside-avoid shadow-sm border border-primary/5"
                   onClick={() => setSelectedMediaId(item.id)}
+                  onMouseEnter={(e) => {
+                    const video = e.currentTarget.querySelector('video');
+                    if (video) video.play().catch(() => {});
+                  }}
+                  onMouseLeave={(e) => {
+                    const video = e.currentTarget.querySelector('video');
+                    if (video) video.pause();
+                  }}
                 >
                   {item.type === 'video' ? (
                     <video
@@ -364,7 +372,6 @@ export default function Home() {
                       loop
                       playsInline
                       preload="metadata"
-                      autoPlay
                     />
                   ) : (
                     <img
@@ -374,7 +381,7 @@ export default function Home() {
                       loading="lazy"
                     />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-6 pointer-events-none">
                     <span className="text-xs uppercase tracking-widest text-primary drop-shadow-sm mb-2">{item.category}</span>
                   </div>
                 </motion.div>
