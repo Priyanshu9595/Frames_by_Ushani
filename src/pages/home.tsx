@@ -196,9 +196,9 @@ export default function Home() {
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             <h2 className="mb-4 text-xs sm:text-sm uppercase tracking-[0.3em] text-primary">Frames By Ushani</h2>
-            <h1 className="mb-6 font-serif text-4xl sm:text-5xl font-bold tracking-wide md:text-7xl lg:text-8xl text-white drop-shadow-lg">
+            <h1 className="mb-6 font-sans text-3xl sm:text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl text-white drop-shadow-lg leading-tight">
               Capturing emotions <br />
-              <span className="text-gradient-gold italic drop-shadow-md">beyond frames.</span>
+              <span className="text-gradient-gold font-light">beyond frames.</span>
             </h1>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
