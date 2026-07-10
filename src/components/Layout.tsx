@@ -68,7 +68,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <div className="fixed inset-0 bg-waves pointer-events-none z-0"></div>
 
       <header className="fixed top-0 sm:top-4 md:top-6 left-1/2 z-50 w-full sm:w-[95%] max-w-[90rem] -translate-x-1/2 sm:rounded-full border-b sm:border border-primary/20 bg-background/70 backdrop-blur-xl shadow-lg transition-all duration-300">
-        <div className="flex h-16 items-center justify-between px-4 md:px-10">
+        <div className="flex h-14 items-center justify-between px-4 md:px-10">
           <div className="flex-1 flex justify-start">
             <a
               href="#home"
@@ -76,12 +76,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
               className="flex items-center gap-4 group"
               aria-label="Frames by Ushani home"
             >
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary bg-primary/10 shadow-[0_0_15px_rgba(200,155,44,0.15)] group-hover:bg-primary transition-colors duration-300">
-                <span className="font-serif text-[1.2rem] font-bold leading-none tracking-[-0.02em] text-primary group-hover:text-white transition-colors duration-300">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-primary bg-primary/10 shadow-[0_0_15px_rgba(200,155,44,0.15)] group-hover:bg-primary transition-colors duration-300">
+                <span className="font-serif text-lg font-bold leading-none tracking-[-0.02em] text-primary group-hover:text-white transition-colors duration-300">
                   FU
                 </span>
               </div>
-              <span className="hidden md:block font-serif text-[1.3rem] font-semibold tracking-wide text-primary transition-colors group-hover:text-foreground whitespace-nowrap">
+              <span className="hidden md:block font-serif text-lg font-semibold tracking-wide text-primary transition-colors group-hover:text-foreground whitespace-nowrap">
                 Frames by Ushani
               </span>
             </a>
