@@ -173,7 +173,7 @@ export default function Home() {
       <section id="home" className="relative w-full aspect-[16/9] md:aspect-[21/9] min-h-[60vh] md:max-h-[800px] xl:max-h-[900px] overflow-hidden bg-black flex items-center justify-center">
         <div className="absolute inset-0">
           <video
-            src="https://res.cloudinary.com/dhfyfbxiv/video/upload/q_auto,f_auto/v1782473671/portfolio/avsmj7clxhuv8sitvpof.mp4"
+            src="https://res.cloudinary.com/dhfyfbxiv/video/upload/v1782473671/portfolio/avsmj7clxhuv8sitvpof.mp4"
             autoPlay
             muted
             loop
