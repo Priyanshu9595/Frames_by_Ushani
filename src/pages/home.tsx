@@ -180,15 +180,13 @@ export default function Home() {
       <section id="home" className="relative w-full h-[100dvh] md:h-auto md:aspect-[21/9] md:min-h-[60vh] md:max-h-[800px] xl:max-h-[900px] overflow-hidden bg-black flex items-center justify-center">
         <div className="absolute inset-0">
           <video
-            src="https://res.cloudinary.com/dhfyfbxiv/video/upload/v1783659853/frames_by_ushani/wedding%20teasers/ilkes7gxa4r3zporfqdt.mp4"
+            src="https://res.cloudinary.com/dhfyfbxiv/video/upload/v1783680193/frames_by_ushani/Background/qwgtykj1qdm5jrupu4yu.mp4"
             autoPlay
             muted
             loop
             playsInline
             className="h-full w-full object-cover object-center scale-[1.35] md:scale-[1.05]"
           />
-          {/* Very light overlay just to keep text slightly readable, but mostly bright video */}
-          <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
         </div>
         
         <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center">
